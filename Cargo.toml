@@ -1,0 +1,38 @@
+[package]
+name = "bevy_template"
+version = "0.1.0"
+publish = false
+authors = ["arewerage <anton.pushkarev.now@gmail.com>"]
+edition = "2021"
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[features]
+default = [
+    # https://github.com/bevyengine/bevy/blob/main/docs/cargo_features.md
+    "bevy/bevy_winit",
+    "bevy/render",
+    "bevy/png",
+
+    "bevy_asset_loader/2d",
+    "bevy_asset_loader/dynamic_assets",
+    "bevy_asset_loader/stageless",
+]
+
+dev = [
+    "bevy/dynamic",
+]
+
+[dependencies]
+bevy = { version = "0.7", default-features = false }
+iyes_loopless = "0.6.1"
+bevy-inspector-egui = "0.11.0"
+bevy_asset_loader = { git = "https://github.com/NiklasEi/bevy_asset_loader.git", rev = "6fc95f" }
