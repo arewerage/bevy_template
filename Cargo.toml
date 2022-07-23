@@ -25,6 +25,8 @@ default = [
     "bevy_asset_loader/2d",
     "bevy_asset_loader/dynamic_assets",
     "bevy_asset_loader/stageless",
+    "bevy_asset_loader/progress_tracking",
+    "bevy_asset_loader/progress_tracking_stageless",
 ]
 
 dev = [
@@ -33,6 +35,7 @@ dev = [
 
 [dependencies]
 bevy = { version = "0.7", default-features = false }
-iyes_loopless = "0.6.1"
+bevy_asset_loader = { git = "https://github.com/NiklasEi/bevy_asset_loader", branch = "main" }
+iyes_loopless = { git = "https://github.com/NiklasEi/iyes_loopless", branch = "loopless-schedule-ext-trait" }
+iyes_progress = { git = "https://github.com/NiklasEi/iyes_progress", branch = "loopless-schedule-ext-trait" }
 bevy-inspector-egui = "0.11.0"
-bevy_asset_loader = { git = "https://github.com/NiklasEi/bevy_asset_loader.git", rev = "6fc95f" }
